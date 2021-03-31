@@ -6,7 +6,7 @@ import "suneditor/dist/css/suneditor.min.css";
 const Settings = {
   imageFileInput: false,
   buttonList: [
-    ["undo", "redo", "font", "fontSize", "formatBlock"],
+    ["codeView", "undo", "redo", "font", "fontSize", "formatBlock"],
     [
       "paragraphStyle",
       "blockquote",
@@ -17,6 +17,7 @@ const Settings = {
       "subscript",
       "superscript"
     ],
+    '/',
     ["fontColor", "hiliteColor", "textStyle", "removeFormat"],
     [
       "outdent",
@@ -25,7 +26,8 @@ const Settings = {
       "horizontalRule",
       "list",
       "lineHeight",
-      "table",
+      "table"] ,
+      [
       "link",
       "image",
       "video",
@@ -37,10 +39,10 @@ const Settings = {
   ]
 };
 
-export default function App() {
+export default function Editor() {
   return (
     <div>
-      <SunEditor setOptions={Settings} height={"60vh"} />
+      <SunEditor setOptions={Settings} height={"auto"} />
     </div>
   );
 }

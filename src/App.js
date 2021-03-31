@@ -1,6 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, SplitButton } from 'react-bootstrap';
+import Editor from './Components/SunEditor';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Dropdown.Divider />
         <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
       </SplitButton>
+      <Editor />
     </div>
   );
 }
