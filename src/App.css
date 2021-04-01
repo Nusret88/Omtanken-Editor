@@ -1,0 +1,19 @@
+.places, .idContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.places {
+  margin: 1rem;
+  height: 20rem;
+}
+
+.idLoader {
+  width: 25% !important;
+}
+
+.locationSelect {
+  width: 25%;
+  margin-right: 1rem;
+}
