@@ -2,14 +2,21 @@ import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
 
 
+
+
+
+
+
+
 /* Användning för att justera toolbar, vad som skall finnas med*/
 const Settings = {
 	"mode": "classic",
 	"rtl": false,
 	"katex": "window.katex",
 	"imageGalleryUrl": "https://etyswjpn79.execute-api.ap-northeast-1.amazonaws.com/suneditor-demo",
-	"videoFileInput": false,
+	"videoFileInput": true,
 	"tabDisable": false,
+
 	"buttonList": [
 		[
 			"undo",

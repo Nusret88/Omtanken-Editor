@@ -22,12 +22,12 @@ function App() {
 
 	return (
 		<div className="App">
-			<div className="idContainer">
-				{/* input för att skriva in id och knapp för att ladda (get funktion) id nummret som är skrivet */}
-				<InputGroup className="idLoader" size="25%">
+			<div className="titleContainer">
+				{/* input för att skriva in title och knapp för att ladda (get funktion) title  som är skrivet */}
+				<InputGroup className="titleLoader" size="25%">
 					<FormControl
-						placeholder="ID"
-						aria-label="ID"
+						placeholder="Title"
+						aria-label="Title"
 						aria-describedby="basic-addon2"
 						aria-setsize={25}
 					/>
