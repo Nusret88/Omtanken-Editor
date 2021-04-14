@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, Button, InputGroup, FormControl } from "react-bootstrap";
 import Editor from "./Components/SunEditor";
 import MultiSelect from "react-multi-select-component";
+import {SlideContext} from './Context/slideContext'
 
 //Date picker
 import {
@@ -14,9 +15,11 @@ import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
 
 function App() {
+	const {Slide, setTitle, setType, setGroup, setStartDate, setEndDate} = useContext(SlideContext);
+	
 	// För dropdown selector som innehåller lokalerna
-	const [startDate, setStartDate] = useState(new Date());
-	const [endDate, setEndDate] = useState(new Date());
+	// const [startDate, setStartDate] = useState(new Date());
+	// const [endDate, setEndDate] = useState(new Date());
 
 	// dropdown options
 	const [options, setOptions] = useState([
@@ -52,13 +55,13 @@ function App() {
 						<Button variant="success">LOAD SLIDE</Button>
 					</InputGroup.Append>
 				</InputGroup> */}
-
 				<InputGroup className="titleLoader" size="25%">
 					<FormControl
 						placeholder="Title"
 						aria-label="Title"
 						aria-describedby="basic-addon2"
 						aria-setsize={25}
+						// onChange={}
 					/>
 				</InputGroup>
 			</div>
@@ -111,7 +114,7 @@ function App() {
 						margin="normal"
 						id="date-picker-inline"
 						label="Start Date"
-						value={startDate}
+						value={Slide.startDate}
 						onChange={(date) => setStartDate(date)}
 						KeyboardButtonProps={{
 							"aria-label": "change date",
@@ -124,7 +127,7 @@ function App() {
 						margin="normal"
 						id="date-picker-inline"
 						label="End Date"
-						value={endDate}
+						value={Slide.endDate}
 						onChange={(date) => setEndDate(date)}
 						KeyboardButtonProps={{
 							"aria-label": "change date",

@@ -1,5 +1,7 @@
 import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
+import React, {useState, useContext} from 'react';
+import {SlideContext} from '../Context/slideContext'
 
 
 /* Användning för att justera toolbar, vad som skall finnas med*/
@@ -85,10 +87,25 @@ const Settings = {
 
 
 export default function Editor() {
+	const {Slide, setBody} = useContext(SlideContext);
 	
+
+	const handleChange = (content) =>{
+		setBody(content);
+		console.log();
+	};
   return (
     <div>
-      <SunEditor setOptions={Settings} height={"auto"} fileinput={true} onVideoUpload={() => {}}/>
+      <SunEditor 
+			setOptions={Settings} 
+			height={"auto"} 
+			fileinput={true} 
+			onVideoUpload={() => {}}
+			onChange={handleChange}
+			/>
+			<p>
+				{Slide.body}
+			</p>
     </div>
   );
 }
