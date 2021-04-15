@@ -25,16 +25,16 @@ let start = startDate.toString;
 const Slide = {
 	title: "Test from React",
 	body: body,
-	startDate: startDate.toDateString,
-	endDate: endDate.toDateString,
+	startDate: '2021-04-23',
+	endDate: '2021-05-30',
 	unit: "Frölunda",
-	group: "Ledning",
+	group: "TV",
 	type: "Extern"
 };
 
 
 const PostSlide = () => {
-	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+Slide.body+'&title=slide test från React&date_to_publish=2021-05-12&date_to_expire=2021-06-23&unit=Mölndal&group=Ledning&type=Extern')
+	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+Slide.body+'&title='+Slide.title+'&date_to_publish='+Slide.startDate+'&date_to_expire='+Slide.endDate+'&unit='+Slide.unit+'&group='+Slide.group+'&type='+Slide.type)
   .then(response => response.json())
   .then(data => console.log(data));
 }
