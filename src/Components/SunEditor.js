@@ -87,7 +87,7 @@ const Settings = {
 
 
 export default function Editor() {
-	const {Slide, setBody} = useContext(SlideContext);
+	const {Slide, setBody, startDate} = useContext(SlideContext);
 	
 
 	const handleChange = (content) =>{
@@ -106,6 +106,7 @@ export default function Editor() {
 			<p>
 				{Slide.body}
 			</p>
+			<p>{Slide.StartDate}</p>
     </div>
   );
 }

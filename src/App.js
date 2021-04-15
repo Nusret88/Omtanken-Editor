@@ -15,7 +15,7 @@ import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
 
 function App() {
-	const {Slide, setTitle, setType, setGroup, setStartDate, setEndDate} = useContext(SlideContext);
+	const {Slide, setTitle, setType, setGroup, setStartDate, setEndDate, PostSlide, startDate, endDate} = useContext(SlideContext);
 	
 	// För dropdown selector som innehåller lokalerna
 	// const [startDate, setStartDate] = useState(new Date());
@@ -111,10 +111,11 @@ function App() {
 						disableToolbar
 						variant="inline"
 						format="yyyy-MM-dd"
+						dateFormat="yyyy-MM-dd"
 						margin="normal"
 						id="date-picker-inline"
 						label="Start Date"
-						value={Slide.startDate}
+						value={startDate}
 						onChange={(date) => setStartDate(date)}
 						KeyboardButtonProps={{
 							"aria-label": "change date",
@@ -124,10 +125,11 @@ function App() {
 						disableToolbar
 						variant="inline"
 						format="yyyy-MM-dd"
+						dateFormat="yyyy-MM-dd"
 						margin="normal"
 						id="date-picker-inline"
 						label="End Date"
-						value={Slide.endDate}
+						value={endDate}
 						onChange={(date) => setEndDate(date)}
 						KeyboardButtonProps={{
 							"aria-label": "change date",
@@ -137,7 +139,7 @@ function App() {
 				</div>
 			</div>
 			<div className="postButtonContainer">
-			<Button variant="success">POST</Button>
+			<Button variant="success" onClick={PostSlide}>POST</Button>
 			</div>
 			
 		</div>
