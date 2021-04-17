@@ -1,4 +1,5 @@
 import React, { useState, createContext } from "react";
+import format from 'date-fns/format'
 
 export const SlideContext = createContext();
 
@@ -11,17 +12,17 @@ export const SlideProvider = (props) => {
 	const [group, setGroup] = useState("");
 	const [unit, setUnit] = useState("");
 
-	let Start = startDate.getDate.toString;
-	let End = endDate.getDate.toString;
-
-// 	function formatDate(string){
-//     var options = { year: 'numeric', month: 'long', day: 'numeric' };
-//     return new Date(string).toLocaleDateString([],options);
+// function formatDate(date){
+// 	var options = { Format: 'yyyy-MM-dd' };
+// 	return new Date(date).toLocaleDateString([],options);
 // }
+
 function formatDate(date){
-	var options = { Format: 'yyyy-MM-dd' };
-	return new Date(date).toLocaleDateString([],options);
+	return format(date, "yyyy-MM-dd");
 }
+
+
+
 const Slide = {
 	Title: "Test 32",
 	Body: body,
@@ -34,7 +35,7 @@ const Slide = {
 
 
 const PostSlide = () => {
-	fetch('http://127.0.0.1:8000/infonewsapi/lagra?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
+	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
   .then(response => response.json())
   .then(data => console.log(data));
 }
