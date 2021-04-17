@@ -106,9 +106,9 @@ export default function Editor() {
 			onChange={handleChange}
 			/>
 			<p>
-				{Slide.body}
+				{Slide.Body}
 			</p>
-			<p>{Slide.StartDate}</p>
+			<p>{Slide.StartDate} och {Slide.EndDate}</p>
     </div>
   );
 }

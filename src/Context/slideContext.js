@@ -11,29 +11,30 @@ export const SlideProvider = (props) => {
 	const [group, setGroup] = useState("");
 	const [unit, setUnit] = useState("");
 
-// const Slide = {
-//     	title: title,
-//     	body: body,
-//     	startDate: startDate,
-//     	endDate: endDate,
-//     	unit: unit,
-//     	group: group,
-//     	type: type
-//     };
+	let Start = startDate.getDate.toString;
+	let End = endDate.getDate.toString;
 
+// 	function formatDate(string){
+//     var options = { year: 'numeric', month: 'long', day: 'numeric' };
+//     return new Date(string).toLocaleDateString([],options);
+// }
+function formatDate(string){
+	var options = { Format: 'yyyy-MM-dd' };
+	return new Date(string).toLocaleDateString([],options);
+}
 const Slide = {
-	title: "Test 32",
-	body: body,
-	startDate: '2021-04-23',
-	endDate: '2021-05-30',
-	unit: "Frölunda",
-	group: "TV",
-	type: "Extern"
+	Title: "Test 32",
+	Body: body,
+	StartDate: formatDate(startDate),
+	EndDate: formatDate(endDate),
+	Unit: "Frölunda",
+	Group: "TV",
+	Type: "Extern"
 };
 
 
 const PostSlide = () => {
-	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.title+'&date_to_publish='+Slide.startDate+'&date_to_expire='+Slide.endDate+'&unit='+Slide.unit+'&group='+Slide.group+'&type='+Slide.type)
+	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
   .then(response => response.json())
   .then(data => console.log(data));
 }
