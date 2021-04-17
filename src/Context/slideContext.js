@@ -18,9 +18,9 @@ export const SlideProvider = (props) => {
 //     var options = { year: 'numeric', month: 'long', day: 'numeric' };
 //     return new Date(string).toLocaleDateString([],options);
 // }
-function formatDate(string){
+function formatDate(date){
 	var options = { Format: 'yyyy-MM-dd' };
-	return new Date(string).toLocaleDateString([],options);
+	return new Date(date).toLocaleDateString([],options);
 }
 const Slide = {
 	Title: "Test 32",
@@ -34,7 +34,7 @@ const Slide = {
 
 
 const PostSlide = () => {
-	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
+	fetch('http://127.0.0.1:8000/infonewsapi/lagra?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
   .then(response => response.json())
   .then(data => console.log(data));
 }
