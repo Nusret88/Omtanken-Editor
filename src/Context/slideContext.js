@@ -21,9 +21,8 @@ export const SlideProvider = (props) => {
 //     	type: type
 //     };
 
-let start = startDate.toString;
 const Slide = {
-	title: "Test from React",
+	title: "Test 32",
 	body: body,
 	startDate: '2021-04-23',
 	endDate: '2021-05-30',
@@ -34,7 +33,7 @@ const Slide = {
 
 
 const PostSlide = () => {
-	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+Slide.body+'&title='+Slide.title+'&date_to_publish='+Slide.startDate+'&date_to_expire='+Slide.endDate+'&unit='+Slide.unit+'&group='+Slide.group+'&type='+Slide.type)
+	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.title+'&date_to_publish='+Slide.startDate+'&date_to_expire='+Slide.endDate+'&unit='+Slide.unit+'&group='+Slide.group+'&type='+Slide.type)
   .then(response => response.json())
   .then(data => console.log(data));
 }

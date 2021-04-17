@@ -1,7 +1,8 @@
 import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
 import React, {useState, useContext} from 'react';
-import {SlideContext} from '../Context/slideContext'
+import {SlideContext} from '../Context/slideContext';
+import lang, {en, se} from 'suneditor/src/lang';
 
 
 /* Användning för att justera toolbar, vad som skall finnas med*/
@@ -80,6 +81,7 @@ const Settings = {
 			"template"
 		]
 	],
+	lang: lang['se'], // se = Svenska och en = Engelska
   callBackSave: function (contents, isChanged) {
     alert(contents);
 }
@@ -87,7 +89,7 @@ const Settings = {
 
 
 export default function Editor() {
-	const {Slide, setBody, startDate} = useContext(SlideContext);
+	const {Slide, setBody} = useContext(SlideContext);
 	
 
 	const handleChange = (content) =>{
