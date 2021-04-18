@@ -1,14 +1,18 @@
-import React, {useContext} from 'react';
+import React, { useContext, useState } from "react";
 import { Button, InputGroup, FormControl } from "react-bootstrap";
-import {SlideContext} from '../Context/slideContext';
+import TextField from "@material-ui/core/TextField";
+import { SlideContext } from "../Context/slideContext";
 
-export default function TitleComponent(){
-  const {Slide, setTitle} = useContext(SlideContext);
+export default function TitleComponent() {
+	const { Slide, setTitle } = useContext(SlideContext);
+	const [textField, setTextField] = useState("");
 
-  return (
-<div className="titleContainer">
-				{/* input för att skriva in title och knapp för att ladda (get funktion) title  som är skrivet */}
-				{/* <InputGroup className="titleLoader" size="25%">
+	setTitle(textField);
+
+	return (
+		<div className="titleContainer">
+			{/* input för att skriva in title och knapp för att ladda (get funktion) title  som är skrivet */}
+			{/* <InputGroup className="titleLoader" size="25%">
 					<Dropdown>
 						<Dropdown.Toggle variant="success" id="dropdown-basic">
 							Dropdown Button
@@ -24,15 +28,13 @@ export default function TitleComponent(){
 						<Button variant="success">LOAD SLIDE</Button>
 					</InputGroup.Append>
 				</InputGroup> */}
-				<InputGroup className="titleLoader" size="25%">
-					<FormControl
-						placeholder="Title"
-						aria-label="Title"
-						aria-describedby="basic-addon2"
-						aria-setsize={25}
-						// onChange={}
-					/>
-				</InputGroup>
-			</div>
-      );
-    }
+			<TextField
+				className="title"
+				id="slideTitle"
+				label="Title"
+				value={textField}
+				onChange={e => setTextField(  e.target.value )}
+			/>
+		</div>
+	);
+}

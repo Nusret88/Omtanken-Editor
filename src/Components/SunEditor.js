@@ -3,6 +3,7 @@ import "suneditor/dist/css/suneditor.min.css";
 import React, {useState, useContext} from 'react';
 import {SlideContext} from '../Context/slideContext';
 import lang, {en, se} from 'suneditor/src/lang';
+import './Components.css';
 
 
 /* Användning för att justera toolbar, vad som skall finnas med*/
@@ -109,6 +110,7 @@ export default function Editor() {
 				{Slide.Body}
 			</p>
 			<p>{Slide.StartDate} och {Slide.EndDate}</p>
+			<p>{Slide.Title}</p>
     </div>
   );
 }

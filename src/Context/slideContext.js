@@ -12,19 +12,13 @@ export const SlideProvider = (props) => {
 	const [group, setGroup] = useState("");
 	const [unit, setUnit] = useState("");
 
-// function formatDate(date){
-// 	var options = { Format: 'yyyy-MM-dd' };
-// 	return new Date(date).toLocaleDateString([],options);
-// }
-
+// Formatera datumet till yyyy-MM-dd
 function formatDate(date){
 	return format(date, "yyyy-MM-dd");
 }
 
-
-
 const Slide = {
-	Title: "Test 32",
+	Title: title,
 	Body: body,
 	StartDate: formatDate(startDate),
 	EndDate: formatDate(endDate),
@@ -40,13 +34,14 @@ const PostSlide = () => {
   .then(data => console.log(data));
 }
 
-// const PostSlide = () => {
-// 	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+Slide.body+'&title=slide test från React&date_to_publish='+startDate+'&date_to_expire='+endDate+'&unit=Mölndal&group=Ledning&type=Extern')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
-// }
-
-  
+// useEffect(() => {
+// 	setAppState({ loading: true });
+// 	const apiUrl = ''http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type';
+// 	axios.get(apiUrl).then((repos) => {
+// 		const allRepos = repos.data;
+// 		setAppState({ loading: false, repos: allRepos });
+// 	});
+// }, [setAppState]);
 
 	return (<SlideContext.Provider value={{setTitle, setBody, setStartDate, setEndDate, setType, setGroup, setUnit, Slide, PostSlide, startDate, endDate}}>
     {props.children}
