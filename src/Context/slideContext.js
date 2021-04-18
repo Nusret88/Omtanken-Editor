@@ -1,5 +1,6 @@
 import React, { useState, createContext } from "react";
 import format from 'date-fns/format'
+import axios from 'axios';
 
 export const SlideContext = createContext();
 
@@ -28,22 +29,20 @@ const Slide = {
 };
 
 
+// - What Is the Maximum Length of a URL? 
+// Technically speaking, your URL should never be longer than 2,048 characters.
+
+// Send with Fetch 
 const PostSlide = () => {
 	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
-  .then(response => response.json())
-  .then(data => console.log(data));
 }
 
-// useEffect(() => {
-// 	setAppState({ loading: true });
-// 	const apiUrl = ''http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type';
-// 	axios.get(apiUrl).then((repos) => {
-// 		const allRepos = repos.data;
-// 		setAppState({ loading: false, repos: allRepos });
-// 	});
-// }, [setAppState]);
+// Send with Axios
+const SendSlide = () => {
+	axios.get('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
+}
 
-	return (<SlideContext.Provider value={{setTitle, setBody, setStartDate, setEndDate, setType, setGroup, setUnit, Slide, PostSlide, startDate, endDate}}>
+	return (<SlideContext.Provider value={{setTitle, setBody, setStartDate, setEndDate, setType, setGroup, setUnit, Slide, PostSlide, startDate, endDate, SendSlide}}>
     {props.children}
     </SlideContext.Provider>);
 };

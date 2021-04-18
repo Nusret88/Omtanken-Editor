@@ -8,7 +8,7 @@ import DatePicker from "./Components/DatePicker";
 import { SlideContext } from "./Context/slideContext";
 
 function App() {
-	const { Slide, PostSlide } = useContext(SlideContext);
+	const { Slide, PostSlide, SendSlide } = useContext(SlideContext);
 
 	return (
 		<div className="App">
@@ -21,7 +21,7 @@ function App() {
 				<DatePicker />
 			</div>
 			<div className="postButtonContainer">
-				<Button variant="success" onClick={PostSlide}>
+				<Button variant="success" onClick={SendSlide}>
 					POST
 				</Button>
 			</div>
