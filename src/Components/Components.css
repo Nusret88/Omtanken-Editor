@@ -11,8 +11,7 @@
 }
 
 .locationSelect {
-	width: 25%;
-	margin-right: 1rem;
+	width: 90%;
 }
 
 #startDate,
@@ -24,6 +23,17 @@
 .titleContainer {
   display: flex;
   justify-content: center;
+}
+
+.LokalTable {
+	width: 70%;
+	margin: 1rem;
+	min-height: 15rem;
+}
+.TableContainer {
+	display: flex;
+	justify-content: center;
+	min-height: 15rem;
 }
 
 /** För att se all CSS för sunEditorn följ länken
