@@ -36,6 +36,16 @@
 	min-height: 15rem;
 }
 
+.buttonmulti {
+	width: 6rem;
+	height: 3rem;
+}
+
+.GridContainer {
+	display: flex;
+	justify-content: center;
+}
+
 /** För att se all CSS för sunEditorn följ länken
 https://github.com/JiHong88/SunEditor/tree/master/src/assets/css */
 

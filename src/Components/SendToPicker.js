@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import MultiSelect from "react-multi-select-component";
-import { Button, InputGroup, FormControl, Dropdown } from "react-bootstrap";
+import { Button, InputGroup, FormControl, Dropdown, ToggleButton} from "react-bootstrap";
 import { SlideContext } from "../Context/slideContext";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -65,10 +65,49 @@ export function Grupp() {
 	);
 }
 
+export function MultiButton() {
+
+	const [checked, setChecked] = useState(false);
+  const [value, setValue] = useState('1');
+	const [tv, setTv] = useState("");
+
+	const Label = () => {
+		if(value === 1) {
+			setTv(" ")
+		}
+		if(value === 2) {
+			setTv("Intern")
+		}
+		if(value === 3) {
+			setTv("Extern")
+		}
+	}
+
+	function Testing () {
+		
+	}
+
+	return (
+		<div onClick={() => {}}>
+			<Button
+					className="buttonmulti"
+          type="button"
+          variant="secondary"
+          // onClick={setValue(2)}
+        ></Button>
+				<p>{value}</p>
+		</div>
+	);
+}
+
 const rows = [
-	createData("Frölunda", <TV />, <Grupp />),
-	createData("Göteborg", <TV />, <Grupp />),
-	createData("Mölndal", <TV />, <Grupp />),
+	createData("Frölunda", <MultiButton/>, <MultiButton/>),
+	createData("Göteborg", <MultiButton/>, <MultiButton/>),
+	createData("Mölndal", <MultiButton/>, <MultiButton/>),
+	createData("Mölndal", <MultiButton/>, <MultiButton/>),
+	createData("Mölndal", <MultiButton/>, <MultiButton/>),
+	createData("Mölndal", <MultiButton/>, <MultiButton/>),
+
 ];
 
 export function SendToPicker() {
@@ -83,9 +122,6 @@ export function SendToPicker() {
 						<TableHead>
 							<TableRow>
 								<TableCell> 
-								<Checkbox
-                          checked={isSelected}
-                        />
 								</TableCell>
 				
 								<TableCell>Lokal</TableCell>
@@ -97,9 +133,6 @@ export function SendToPicker() {
 							{rows.map((row) => (
 								<TableRow key={row.Lokal}>
 									<TableCell>
-									<Checkbox
-                          checked={isSelected}
-                        />
 									</TableCell>
 									<TableCell align="left">{row.Lokal}</TableCell>
 									<TableCell align="left">{row.TV}</TableCell>

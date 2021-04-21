@@ -1,4 +1,6 @@
 import React, { useState, createContext } from "react";
+import { UncontrolledAlert } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import format from 'date-fns/format'
 import axios from 'axios';
 
@@ -12,6 +14,9 @@ export const SlideProvider = (props) => {
 	const [type, setType] = useState("");
 	const [group, setGroup] = useState("");
 	const [unit, setUnit] = useState("");
+	const [visible, setVisible] = useState(false);
+
+  const onDismiss = () => setVisible(false);
 
 // Formatera datumet till yyyy-MM-dd
 function formatDate(date){
@@ -32,17 +37,13 @@ const Slide = {
 // - What Is the Maximum Length of a URL? 
 // Technically speaking, your URL should never be longer than 2,048 characters.
 
-// Send with Fetch 
-const PostSlide = () => {
-	fetch('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
-}
-
 // Send with Axios
 const SendSlide = () => {
 	axios.get('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
+	setVisible(!visible)
 }
 
-	return (<SlideContext.Provider value={{setTitle, setBody, setStartDate, setEndDate, setType, setGroup, setUnit, Slide, PostSlide, startDate, endDate, SendSlide}}>
+	return (<SlideContext.Provider value={{setTitle, setBody, setStartDate, setEndDate, setType, setGroup, setUnit, Slide, startDate, endDate, SendSlide, onDismiss, visible}}>
     {props.children}
     </SlideContext.Provider>);
 };
