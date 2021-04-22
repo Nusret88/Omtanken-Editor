@@ -21,8 +21,8 @@
 }
 
 .titleContainer {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .LokalTable {
@@ -49,3 +49,20 @@
 /** För att se all CSS för sunEditorn följ länken
 https://github.com/JiHong88/SunEditor/tree/master/src/assets/css */
 
+.sun-editor-editable td,
+.sun-editor-editable th,
+.sun-editor-editable figure,
+.sun-editor-editable figcaption,
+.sun-editor-editable img,
+.sun-editor-editable iframe,
+.sun-editor-editable video,
+.sun-editor-editable audio {
+	position: fixed;
+	z-index: 0;
+	/* background-attachment: fixed; */
+}
+
+.sun-editor-editable span {
+	position: relative;
+	z-index: 5;
+}

@@ -4,6 +4,9 @@ import React, { useState, useContext } from "react";
 import { SlideContext } from "../Context/slideContext";
 import lang, { en, se } from "suneditor/src/lang";
 import "./Components.css";
+import image from "suneditor/src/plugins/dialog/link";
+import list from "suneditor/src/plugins/submenu/list";
+import { font, video } from "suneditor/src/plugins";
 
 /* Användning för att justera toolbar, vad som skall finnas med*/
 const Settings = {
@@ -14,11 +17,12 @@ const Settings = {
 	katex: "window.katex",
 	imageGalleryUrl:
 		"https://etyswjpn79.execute-api.ap-northeast-1.amazonaws.com/suneditor-demo",
-	videoFileInput: true, // verkar inte fungera, men URL fungerar
+	videoFileInput: false, // verkar inte fungera, men URL fungerar
 	imageFileInput: true,
 	audioFileInput: true,
+	plugins: [font, video, image, list],
 	tabDisable: false,
-	videoWidth: "300",
+	videoWidth: "1200",
 	videoHeight: "600",
 	videoRotation: true,
 	videoRatio: "",
@@ -33,9 +37,9 @@ const Settings = {
 		},
 	],
 	videoUploadUrl: "",
-	videoMultipleFile: true,
-	videoUploadSizeLimit: "",
-	videoAccept: ".mp4, .MKV",
+	// videoMultipleFile: true,
+	// videoUploadSizeLimit: "",
+	// videoAccept: ".mp4, .MKV",
 	printTemplate:
 		"<div style='width:auto; max-width:1080px; margin:auto;'>    <h1>Print Template</h1>     {{contents}}     <div>_Footer_</div></div>            ",
 	// TEMPLATE LISTA HÄR:
@@ -74,6 +78,28 @@ const Settings = {
 		["table", "link", "image", "video", "audio", "imageGallery"],
 		["fullScreen", "showBlocks", "codeView", "preview"],
 		["print", "save", "template"],
+	],
+	colorList: [
+		[
+			"brown",
+			"darkred",
+			"red",
+			"orange",
+			"yellow",
+			"lightgreen",
+			"green",
+			"darkgreen",
+			"teal",
+			"aqua",
+			"lightblue",
+			"blue",
+			"darkblue",
+			"purple",
+			"pink",
+			"white",
+			"grey",
+			"black",
+		],
 	],
 	lang: lang["se"], // se = Svenska och en = Engelska
 	callBackSave: function (contents, isChanged) {

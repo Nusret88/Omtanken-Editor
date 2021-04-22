@@ -16,6 +16,7 @@ export default function GridComponent() {
     }
     setCSelected([...cSelected]);
   }
+
   return(
 <div className="GridContainer">
   {/* TESTING HERE */}

@@ -36,7 +36,7 @@ function App() {
 			<GridComponent />
 			{/* <SendToPicker /> */}
 			<div className="postButtonContainer">
-				<Button outline color="success" onClick={SendSlide}>
+				<Button color="success" onClick={SendSlide}>
 					Post Slide
 				</Button>{" "}
 			</div>
