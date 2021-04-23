@@ -20,6 +20,7 @@ const Settings = {
 	videoFileInput: false, // verkar inte fungera, men URL fungerar
 	imageFileInput: true,
 	audioFileInput: true,
+	iframe: false,
 	plugins: [font, video, image, list],
 	tabDisable: false,
 	videoWidth: "1200",
@@ -46,11 +47,55 @@ const Settings = {
 	templates: [
 		{
 			name: "Template-1",
-			html: "<p>TEMP 1</p>",
+			html: `<p><h3>Rubrik, syns på hopfälld nyhet</h3>
+			<div class="se-component se-image-container __se__float-right" contenteditable="false">
+					<figure>
+							<img src="https://webdoc.vasterleden.se/webdoc/publish/assets/pics/image-placeholder-portrait.png" alt="" data-proportion="true" data-size="507px,418px" data-align="right" data-file-name="image-placeholder-portrait.png" data-file-size="0" data-origin="100%,auto" data-index="1" origin-size="137,180" style="width: 507px; height: 418px;">
+					</figure>
+			</div>
+			<h5>Ingress. Synliga fel som överstrykningar m.m. saknas, vilket stöder teorin om en nonsenstext.</h5>
+			
+			<h5>Några forskare tror sig dock ha hittat ändringar av bokstäver som kan vara kort </h5>
+			
+			<div>En Wikipediaartikels tillförlitlighet kan bedömas bland annat genom att studera artikelns historik, som framgår av forskningsresultat nedan.</div>
+			
+			<div><span><br>
+			</span></div>
+			
+			<div><span>Jenny Fogelberg </span><br>
+			<span>Kommunikatör</span><br>
+			 </div>
+			
+			<div style="width:750px;">  
+					<table>
+							<tbody>
+									<tr>
+											<td>
+													<p>En Wikipediaartikels tillförlitlighet kan bedömas bland annat genom att studera artikelns historik, som framgår av forskningsresultat nedan.</p>
+											</td>
+											<td>
+													<p>En Wikipediaartikels tillförlitlighet kan bedömas bland annat genom att studera artikelns historik, som framgår av forskningsresultat nedan.</p>
+											</td>
+									</tr>
+							</tbody>
+					</table>
+			</div>
+			</p>`,
 		},
 		{
 			name: "Template-2",
-			html: "<p>TEMP 2</p>",
+			html: `<p><div class="image-text-left color-brown">
+			<span class="image-text-image" style="background-image:url(images/YOUR-IMAGE.jpg);"  >mountain</span>
+			<div class="image-text-column">
+			
+			<div>
+			<h2>Your Title<h2>
+			
+			<p>Your text here<p>
+			
+			</div>
+			</div>
+			</div></p>`,
 		},
 		{
 			name: "Test Template",
@@ -82,6 +127,7 @@ const Settings = {
 	colorList: [
 		[
 			"brown",
+			"#daa520",
 			"darkred",
 			"red",
 			"orange",

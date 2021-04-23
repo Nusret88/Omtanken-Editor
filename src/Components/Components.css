@@ -45,6 +45,25 @@
 	display: flex;
 	justify-content: center;
 }
+.DataTable {
+	width: 40%;
+}
+
+.tblButton {
+	border-width: 1px;
+	border-color: black;
+}
+.btn-secondary {
+	background-color: white !important;
+	color: black !important;
+}
+.btn-secondary :hover{
+	background-color: rgb(168, 167, 167) !important;
+	color: black !important;
+}
+.btn-outline-secondary :hover {
+	color: aqua !important;
+}
 
 /** För att se all CSS för sunEditorn följ länken
 https://github.com/JiHong88/SunEditor/tree/master/src/assets/css */
@@ -57,12 +76,22 @@ https://github.com/JiHong88/SunEditor/tree/master/src/assets/css */
 .sun-editor-editable iframe,
 .sun-editor-editable video,
 .sun-editor-editable audio {
-	position: fixed;
+	position: fixed 0px 0px;
+	left: 0;
+	top: 0;
 	z-index: 0;
-	/* background-attachment: fixed; */
 }
 
-.sun-editor-editable span {
-	position: relative;
-	z-index: 5;
+/** video */
+.sun-editor-editable .se-video-container iframe, .sun-editor-editable .se-video-container video {
+	z-index: 0;
+}
+
+.sun-editor-editable[contenteditable="true"] figure a, .sun-editor-editable[contenteditable="true"] figure img, .sun-editor-editable[contenteditable="true"] figure iframe, .sun-editor-editable[contenteditable="true"] figure video {
+	z-index: 0;
+}
+
+/* image */
+.sun-editor-editable .se-image-container a img {
+	z-index: 0;
 }

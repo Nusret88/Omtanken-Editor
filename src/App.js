@@ -8,14 +8,10 @@ import DatePicker from "./Components/DatePicker";
 import { SlideContext } from "./Context/slideContext";
 import GridComponent from "./Components/GridComponent";
 
-import { SendToPicker } from "./Components/SendToPicker";
-
 function App() {
 	const { SendSlide, onDismiss, visible } = useContext(
 		SlideContext,
 	);
-
-	
 
 	return (
 		<div className="App">
@@ -30,16 +26,18 @@ function App() {
 				{/* Date Pickers */}
 				<DatePicker />
 			</div>
+			<div>
 			<GridComponent />
 			<GridComponent />
 			<GridComponent />
 			<GridComponent />
-			{/* <SendToPicker /> */}
+			</div>
 			<div className="postButtonContainer">
 				<Button color="success" onClick={SendSlide}>
 					Post Slide
 				</Button>{" "}
 			</div>
+			
 		</div>
 	);
 }
