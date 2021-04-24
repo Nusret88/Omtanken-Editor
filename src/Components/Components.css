@@ -65,6 +65,11 @@
 	color: aqua !important;
 }
 
+.DataGridButton {
+	width: 8rem;
+	height: 4rem;
+}
+
 /** För att se all CSS för sunEditorn följ länken
 https://github.com/JiHong88/SunEditor/tree/master/src/assets/css */
 

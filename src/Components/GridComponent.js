@@ -104,7 +104,7 @@ export default function GridComponent() {
 		<div className="GridContainer">
 			{/* TESTING HERE */}
 			<ButtonGroup>
-				<Button className="tblButton" outline color={color[0]} onClick={() => LocationCheck()}>
+				<Button className="tblButton" color={color[0]} onClick={() => LocationCheck()}>
 					Frölunda
 				</Button>
 				<Button className="tblButton" color={color[1]} onClick={() => InternCheck()}>

@@ -7,6 +7,8 @@ import TitleComponent from "./Components/TitleComponent";
 import DatePicker from "./Components/DatePicker";
 import { SlideContext } from "./Context/slideContext";
 import GridComponent from "./Components/GridComponent";
+import GridMapTest from "./Components/GridMapTest";
+import GridButtonTest from "./Components/GridButtonTest";
 
 function App() {
 	const { SendSlide, onDismiss, visible } = useContext(
@@ -31,6 +33,10 @@ function App() {
 			<GridComponent />
 			<GridComponent />
 			<GridComponent />
+			</div>
+			{/* <GridButtonTest /> */}
+			<div className="GridContainer">
+			<GridMapTest />
 			</div>
 			<div className="postButtonContainer">
 				<Button color="success" onClick={SendSlide}>
