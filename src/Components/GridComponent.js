@@ -101,19 +101,19 @@ export default function GridComponent() {
 		
 	}
 	return (
-		<div className="GridContainer">
+		<div className="TableContainer">
 			{/* TESTING HERE */}
 			<ButtonGroup>
-				<Button className="tblButton" color={color[0]} onClick={() => LocationCheck()}>
+				<Button className="DataGridButton" color={color[0]} onClick={() => LocationCheck()}>
 					Frölunda
 				</Button>
-				<Button className="tblButton" color={color[1]} onClick={() => InternCheck()}>
+				<Button className="DataGridButton" color={color[1]} onClick={() => InternCheck()}>
 					Intern
 				</Button>
-				<Button className="tblButton" color={color[2]} onClick={() => ExternCheck()}>
+				<Button className="DataGridButton" color={color[2]} onClick={() => ExternCheck()}>
 					Extern
 				</Button>
-				<Button className="tblButton" color={color[3]} onClick={() => ProCheck()}>
+				<Button className="DataGridButton" color={color[3]} onClick={() => ProCheck()}>
 					Prioritet
 				</Button>
 			</ButtonGroup>

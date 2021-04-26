@@ -28,6 +28,7 @@ function App() {
 				{/* Date Pickers */}
 				<DatePicker />
 			</div>
+			<p style={{textAlign: "center"}}>First try</p>
 			<div>
 			<GridComponent />
 			<GridComponent />
@@ -35,6 +36,7 @@ function App() {
 			<GridComponent />
 			</div>
 			{/* <GridButtonTest /> */}
+			<p style={{textAlign: "center"}}>Second try</p>
 			<div className="GridContainer">
 			<GridMapTest />
 			</div>

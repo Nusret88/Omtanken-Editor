@@ -33,7 +33,6 @@
 .TableContainer {
 	display: flex;
 	justify-content: center;
-	min-height: 15rem;
 }
 
 .buttonmulti {
@@ -44,6 +43,7 @@
 .GridContainer {
 	display: flex;
 	justify-content: center;
+	margin-top: 2rem;
 }
 .DataTable {
 	width: 40%;
@@ -68,6 +68,7 @@
 .DataGridButton {
 	width: 8rem;
 	height: 4rem;
+	border-radius: 0;
 }
 
 /** För att se all CSS för sunEditorn följ länken
