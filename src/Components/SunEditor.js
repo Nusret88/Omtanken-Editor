@@ -170,14 +170,6 @@ export default function Editor() {
 				onVideoUpload={() => {}}
 				onChange={handleChange}
 			/>
-			<p>{Slide.Body}</p>
-			<p>
-				{Slide.StartDate} och {Slide.EndDate}
-			</p>
-			<p>{Slide.Title}</p>
-			{array.map((index) => (
-				<p>{array[index]}</p>
-			))}
 		</div>
 	);
 }
