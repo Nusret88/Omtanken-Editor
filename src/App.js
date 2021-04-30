@@ -20,20 +20,20 @@ function App() {
 			<UncontrolledAlert color="success" isOpen={visible} toggle={onDismiss}>
 				Your slide has been sent
 			</UncontrolledAlert>
-			{/* Title */}
-			<TitleComponent />
 			{/* Editorn */}
 			<Editor />
+			{/* Title */}
+			<TitleComponent />
 			<div className="places">
 				{/* Date Pickers */}
 				<DatePicker />
 			</div>
-			<div>
+			{/* <div>
 			<GridComponent />
 			<GridComponent />
 			<GridComponent />
 			<GridComponent />
-			</div>
+			</div> */}
 			{/* <GridButtonTest /> */}
 			<div className="GridContainer">
 			<GridMapTest />

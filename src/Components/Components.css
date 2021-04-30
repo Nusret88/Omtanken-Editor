@@ -25,6 +25,10 @@
 	justify-content: center;
 }
 
+.title {
+	width: 30rem;
+}
+
 .LokalTable {
 	width: 70%;
 	margin: 1rem;
@@ -36,8 +40,8 @@
 }
 
 .buttonmulti {
-	width: 6rem;
-	height: 3rem;
+	width: 8rem;
+	height: 6rem;
 }
 
 .GridContainer {
@@ -66,8 +70,8 @@
 }
 
 .DataGridButton {
-	width: 6rem;
-	height: 4rem;
+	width: 10rem;
+	height: 6rem;
 	border-radius: 0;
 }
 
