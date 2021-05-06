@@ -36,7 +36,7 @@ export default function DatePicker () {
 						id="date-picker-inline"
 						label="End Date"
 						value={endDate}
-						onChange={(date) => setEndDate(startDate() +30)}
+						onChange={(date) => setEndDate(date)}
 						KeyboardButtonProps={{
 							"aria-label": "change date",
 						}}

@@ -7,10 +7,11 @@ import axios from 'axios';
 export const SlideContext = createContext();
 
 export const SlideProvider = (props) => {
+	const date = new Date();
 	const [title, setTitle] = useState("");
 	const [body, setBody] = useState("");
 	const [startDate, setStartDate] = useState(new Date());
-	const [endDate, setEndDate] = useState(new Date());
+	const [endDate, setEndDate] = useState(new Date(date.setMonth(date.getMonth()+1)));
 	const [type, setType] = useState([]);
 	const [group, setGroup] = useState([]);
 	const [unit, setUnit] = useState([]);
