@@ -6,7 +6,16 @@ import lang, { en, se } from "suneditor/src/lang";
 import "./Components.css";
 import image from "suneditor/src/plugins/dialog/link";
 import list from "suneditor/src/plugins/submenu/list";
-import { font, video } from "suneditor/src/plugins";
+import { font,
+	fontSize,
+	formatBlock,
+	fontColor,
+	hiliteColor,
+	align,
+	horizontalRule,
+	table,
+	link,
+	video } from "suneditor/src/plugins";
 
 /* Användning för att justera toolbar, vad som skall finnas med*/
 const Settings = {
@@ -21,7 +30,20 @@ const Settings = {
 	imageFileInput: true,
 	audioFileInput: true,
 	iframe: false,
-	plugins: [font, video, image, list],
+	plugins: [
+    font,
+    fontSize,
+    formatBlock,
+    fontColor,
+    hiliteColor,
+    align,
+    horizontalRule,
+    list,
+    table,
+    link,
+    image,
+    video
+]  ,
 	tabDisable: false,
 	videoWidth: "1200",
 	videoHeight: "600",

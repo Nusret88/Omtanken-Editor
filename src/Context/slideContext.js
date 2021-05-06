@@ -11,10 +11,11 @@ export const SlideProvider = (props) => {
 	const [body, setBody] = useState("");
 	const [startDate, setStartDate] = useState(new Date());
 	const [endDate, setEndDate] = useState(new Date());
-	const [type, setType] = useState("");
-	const [group, setGroup] = useState("");
-	const [unit, setUnit] = useState("");
+	const [type, setType] = useState([]);
+	const [group, setGroup] = useState([]);
+	const [unit, setUnit] = useState([]);
 	const [visible, setVisible] = useState(false);
+	const [slideData, setSlideData] = useState([{}]);
 
   const onDismiss = () => setVisible(false);
 
@@ -23,19 +24,38 @@ function formatDate(date){
 	return format(date, "yyyy-MM-dd");
 }
 
+
+function fillData (Data) {
+	// setUnit([...unit, Unit]);
+	// setGroup([...group, Group]);
+	// setType([...type, Type]);
+		setSlideData([...slideData, Data])
+	return console.log(slideData);
+	// console.log(unit + "\n" + group + "\n" + type);
+};
+
+// What will be sent to the api
 const Slide = {
 	Title: title,
 	Body: body,
 	StartDate: formatDate(startDate),
 	EndDate: formatDate(endDate),
-	Unit: "Frölunda",
+	Unit: unit,
 	Group: "TV",
-	Type: "Extern"
+	Type: type
 };
 
-
-// - What Is the Maximum Length of a URL? 
-// Technically speaking, your URL should never be longer than 2,048 characters.
+// #How it maybe should look like in order for it to work as we want it to?
+// const Slide = {
+// 	Title: "",
+// 	Body: "",
+// 	StartDate: formatDate(startDate),
+// 	EndDate: formatDate(endDate),
+// 	PostTo: [
+// {Unit: "Frölunda", Group: "TV", Type: ["Intern", "Extern"]}, 
+// {Unit: "Mölndal", Group: "TV", Type: ["Intern"]}
+// ]
+// };
 
 // Send with Axios
 const SendSlide = () => {
@@ -43,7 +63,7 @@ const SendSlide = () => {
 	setVisible(!visible)
 }
 
-	return (<SlideContext.Provider value={{setTitle, setBody, setStartDate, setEndDate, setType, setGroup, setUnit, Slide, startDate, endDate, SendSlide, onDismiss, visible}}>
+	return (<SlideContext.Provider value={{setTitle, setBody, setStartDate, setEndDate, setType, setGroup, setUnit, Slide, startDate, endDate, SendSlide, onDismiss, visible, fillData, unit, group, type, setSlideData, slideData}}>
     {props.children}
     </SlideContext.Provider>);
 };

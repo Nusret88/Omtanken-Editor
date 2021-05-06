@@ -6,12 +6,10 @@ import Editor from "./Components/SunEditor";
 import TitleComponent from "./Components/TitleComponent";
 import DatePicker from "./Components/DatePicker";
 import { SlideContext } from "./Context/slideContext";
-import GridComponent from "./Components/GridComponent";
-import GridMapTest from "./Components/GridMapTest";
-import GridButtonTest from "./Components/GridButtonTest";
+import MatrixComponent from "./Components/MatrixComponent";
 
 function App() {
-	const { SendSlide, onDismiss, visible } = useContext(
+	const { SendSlide, onDismiss, visible, printData } = useContext(
 		SlideContext,
 	);
 
@@ -36,13 +34,14 @@ function App() {
 			</div> */}
 			{/* <GridButtonTest /> */}
 			<div className="GridContainer">
-			<GridMapTest />
+			<MatrixComponent />
 			</div>
 			<div className="postButtonContainer">
 				<Button color="success" onClick={SendSlide}>
 					Post Slide
 				</Button>{" "}
 			</div>
+			< printData />
 			
 		</div>
 	);

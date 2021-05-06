@@ -105,3 +105,33 @@ https://github.com/JiHong88/SunEditor/tree/master/src/assets/css */
 .sun-editor-editable .se-image-container a img {
 	z-index: 0;
 }
+
+.sun-editor-editable p, .sun-editor-editable div, 
+.sun-editor-editable h1, .sun-editor-editable h2, .sun-editor-editable h3, 
+.sun-editor-editable h4, .sun-editor-editable h5, .sun-editor-editable h6, .sun-editor-editable li, 
+.sun-editor-editable ol, .sun-editor-editable ul, 
+.sun-editor-editable pre {
+	position: fixed 0px 0px;
+	left: 0;
+	top: 0;
+	z-index: 5;
+}
+/* 
+.se-component se-image-container {
+	position: fixed 0px 0px !important;
+	z-index: -1 !important;
+}
+
+.se-component, .se-image-container td,
+.se-image-container th,
+.se-image-container figure,
+.se-image-container figcaption,
+.se-image-container img,
+.se-image-container iframe,
+.se-image-container video,
+.se-image-container audio {
+	position: fixed 0px 0px;
+	left: 0;
+	top: 0;
+	z-index: -1;
+} */
