@@ -116,6 +116,12 @@ https://github.com/JiHong88/SunEditor/tree/master/src/assets/css */
 	top: 0;
 	z-index: 5;
 }
+
+.se-navigation {
+	visibility: hidden;
+}
+
+
 /* 
 .se-component se-image-container {
 	position: fixed 0px 0px !important;
