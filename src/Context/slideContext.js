@@ -46,18 +46,6 @@ const Slide = {
 	Type: type
 };
 
-// #How it maybe should look like in order for it to work as we want it to?
-// const Slide = {
-// 	Title: "",
-// 	Body: "",
-// 	StartDate: formatDate(startDate),
-// 	EndDate: formatDate(endDate),
-// 	PostTo: [
-// {Unit: "Frölunda", Group: "TV", Type: ["Intern", "Extern"]}, 
-// {Unit: "Mölndal", Group: "TV", Type: ["Intern"]}
-// ]
-// };
-
 // Send with Axios
 const SendSlide = () => {
 	axios.get('http://127.0.0.1:8000/infonewsapi/addslide?body='+body+'&title='+Slide.Title+'&date_to_publish='+Slide.StartDate+'&date_to_expire='+Slide.EndDate+'&unit='+Slide.Unit+'&group='+Slide.Group+'&type='+Slide.Type)
