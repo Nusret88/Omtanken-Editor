@@ -8,9 +8,9 @@ export default function MatrixComponent() {
   const {fillData, unit, setUnit, group, setGroup, type, setType, setSlideData, slideData} = useContext(SlideContext);
   const [data, setData] = useState([
     {
-      location: { id: 1, value: "Alla", prio: 0 },
-      intern: { id: 10, value: "Intern", prio: 0 },
-      extern: { id: 19, value: "Extern", prio: 0 },
+      "location": { "id": 1, "value": "Alla", "prio": 0 },
+      "intern": { "id": 10, "value": "Intern", "prio": 0 },
+      "extern": { "id": 19, "value": "Extern", "prio": 0 },
     },
     {
       location: { id: 2, value: "Järnhälsan", prio: 0, loc: "Järnhälsan" },
@@ -53,6 +53,50 @@ export default function MatrixComponent() {
       extern: { id: 27, value: "", prio: 0, name: "Extern", loc: "Ekenhälsan" },
     },
   ]);
+  const [workplaces, setWorkplaces] = useState({ 
+    "alla": {
+    "Järnhälsan": {
+      "TV": 0, // 0 none, 1 extern, 2 intern, 3 both
+      "intern": 0, // 0 none, 1 low, 2 medium, 3 high
+      "extern": 0, // 0 none, 1 low, 2 medium, 3 high
+    },
+    "Pedagogen Park": {
+      "TV": 0, // 0 none, 1 extern, 2 intern, 3 both
+      "intern": 0, // 0 none, 1 low, 2 medium, 3 high
+      "extern": 0, // 0 none, 1 low, 2 medium, 3 high
+    }, 
+    "Landala": {
+      "TV": 0, // 0 none, 1 extern, 2 intern, 3 both
+      "intern": 0, // 0 none, 1 low, 2 medium, 3 high
+      "extern": 0, // 0 none, 1 low, 2 medium, 3 high
+    }, 
+    "Åby": {
+      "TV": 0, // 0 none, 1 extern, 2 intern, 3 both
+      "intern": 0, // 0 none, 1 low, 2 medium, 3 high
+      "extern": 0, // 0 none, 1 low, 2 medium, 3 high
+    }, 
+    "Majorna": {
+      "TV": 0, // 0 none, 1 extern, 2 intern, 3 both
+      "intern": 0, // 0 none, 1 low, 2 medium, 3 high
+      "extern": 0, // 0 none, 1 low, 2 medium, 3 high
+    }, 
+    "Grimmered": {
+      "TV": 0, // 0 none, 1 extern, 2 intern, 3 both
+      "intern": 0, // 0 none, 1 low, 2 medium, 3 high
+      "extern": 0, // 0 none, 1 low, 2 medium, 3 high
+    }, 
+    "Frölunda Torg": {
+      "TV": 0, // 0 none, 1 extern, 2 intern, 3 both
+      "intern": 0, // 0 none, 1 low, 2 medium, 3 high
+      "extern": 0, // 0 none, 1 low, 2 medium, 3 high
+    }, 
+    "Ekenhälsan": {
+      "TV": 0, // 0 none, 1 extern, 2 intern, 3 both
+      "intern": 0, // 0 none, 1 low, 2 medium, 3 high
+      "extern": 0, // 0 none, 1 low, 2 medium, 3 high
+    },} 
+  })
+  setType(workplaces.alla)
   const [cSelected, setCSelected] = useState([]);
 
   const onCheckboxBtnClick = (idx, selected) => {
@@ -68,6 +112,9 @@ export default function MatrixComponent() {
             all_data_ids.push(item.intern.id);
             all_data_ids.push(item.extern.id);
           });
+          // Workplaces["alla"].forEach((item) => { return setWorkplaces(item: {"TV": 3})})
+          // setWorkplaces(...Workplaces, {"Frölunda Torg": {"TV": 3}})
+          console.log(workplaces.alla);
 
           // NEW adds for all
           let Slide = [];
